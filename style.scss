@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #1a1a1a;
+  background: radial-gradient(circle at center, #1a1546, #040411 40%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  perspective: 1000px;
+}
+
+h3 {
+  @apply text-5xl;
+  transform: rotateX(0) rotateY('-25deg');
+  text-transform: uppercase;
+  width: 500px;
+  text-align: center;
+  color: #b9dfff;
+  color: #ffff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff, 0 0 35px #228dff, 0 0 40px #228dff;
+  margin: 48px auto;
+  position: relative;
+  padding: 32px 0 144px;
+  animation: reverse;
+}
+
+h3:hover {
+  transform: rotateY(0.5turn);
+}
+
+.scroll-more {
+  color: #fff;
+  text-align: center;
+  width: 450px;
+  position: absolute;
+  bottom: 128px;
+  left: calc(50% - 225px);
+  margin: 0 auto;
+  font-size: 256px;
+  opacity: 1;
+  transition: opacity .3s ease;
+  z-index: -1;
+  transform-origin: center;
+  -webkit-animation: bounce 3s cubic-bezier(.37, 0, .21, 1.02) infinite, fonts 5s linear infinite;
+  animation: bounce 3s cubic-bezier(.37, 0, .21, 1.02) infinite, fonts 5s linear infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  to {
+    transform: translateZ(-2px) translateY(5px)
+  }
+
+  40% {
+    transform: rotateY(180deg) translateZ(-2px) translateY(-35px)
+  }
+
+  60% {
+    transform: translateZ(-2px) translateY(-25px)
+  }
+}
